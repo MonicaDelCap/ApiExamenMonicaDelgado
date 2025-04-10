@@ -28,6 +28,11 @@ app.MapScalarApiReference();
 //    options.SwaggerEndpoint("/openapi/v1.json", "Api Monica");
 //});
 
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/scalar");
+    return Task.CompletedTask;
+});
 app.UseAuthorization();
 
 app.MapControllers();
